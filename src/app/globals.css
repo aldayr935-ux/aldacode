@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Paleta NETIKA */
+  --color-primary: #0d1b2a;
+  --color-secondary: #1e3a5f;
+  --color-accent: #c9a84c;
+  --color-accent-dim: #a8872e;
+  --color-light: #f0f4f8;
+  --color-white: #ffffff;
+  --color-muted: #8a9bb0;
+  --color-border: rgba(201, 168, 76, 0.18);
+
+  /* Fuentes */
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
+
+  /* Radios */
+  --radius: 8px;
+  --radius-lg: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Variables disponibles en CSS puro */
+:root {
+  --navbar-h: 72px;
+  --transition: 0.28s ease;
+  --shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Reset base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  background: #0d1b2a;
+  color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1b2a;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c;
+  border-radius: 3px;
+}
+
+/* Animaciones globales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* Portfolio images */
+.portfolio-img--1 { background-image: url('/img/samay.webp'); }
+.portfolio-img--2 { background-image: url('/img/melodia.webp'); }
+.portfolio-img--3 { background-image: url('/img/trackon.webp'); }
