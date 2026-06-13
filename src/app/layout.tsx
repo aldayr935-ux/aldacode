@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "NETIKA — Desarrollo Web",
+  title: "ALDACODE — Desarrollo Web",
   description:
     "Agencia de desarrollo web. Creamos sitios web personalizados para tu negocio, portafolio, tienda online y más.",
 };

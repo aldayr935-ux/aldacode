@@ -61,7 +61,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-[1.05rem] font-light leading-[1.75] text-light mb-10 max-w-[460px]">
-          En NETIKA creemos en el poder de la web para impulsar tus proyectos.
+          En ALDACODE creemos en el poder de la web para impulsar tus proyectos.
           Creamos tu sitio web personalizado para tu negocio, blog personal,
           portafolio, tienda online o lo que imagines. Lleva tus ideas al
           siguiente nivel.

@@ -10,8 +10,8 @@ export default function NotFound() {
             {/* Logo */}
             <Link href="/">
                 <Image
-                    src="/img/netika_logo.svg"
-                    alt="NETIKA"
+                    src="/img/aldacode_logo.svg"
+                    alt="ALDACODE"
                     width={280}
                     height={50}
                     className="h-14 w-auto object-contain mb-16 opacity-80 hover:opacity-100 transition-opacity"

@@ -10,8 +10,8 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="flex flex-col items-center md:items-start gap-3">
                         <Image
-                            src="/img/netika_logo.svg"
-                            alt="NETIKA — Web Development"
+                            src="/img/aldacode_logo.svg"
+                            alt="aldacode — Web Development"
                             width={280}
                             height={50}
                             className="h-10 w-auto object-contain"
@@ -39,7 +39,7 @@ export default function Footer() {
 
                     {/* Copy */}
                     <p className="text-xs text-muted text-center md:text-right">
-                        © {new Date().getFullYear()} NETIKA.
+                        © {new Date().getFullYear()} ALDACODE.
                         <br className="hidden md:block" />
                         Todos los derechos reservados.
                     </p>

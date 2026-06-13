@@ -30,8 +30,8 @@ export default function Navbar() {
                         aria-label="NETIKA — Inicio"
                     >
                         <Image
-                            src="/img/netika_logo.svg"
-                            alt="Logo NETIKA"
+                            src="/img/aldacode_logo.svg"
+                            alt="Logo ALDACODE"
                             width={280}
                             height={50}
                             className="h-12 w-auto object-contain"
@@ -114,8 +114,8 @@ export default function Navbar() {
             >
                 <div className="flex items-center justify-between px-6 py-5 border-b border-border">
                     <span style={{ fontFamily: "var(--font-playfair)" }} className="font-bold text-lg tracking-widest">
-                        <span className="text-white">NET</span>
-                        <span className="text-accent">IKA</span>
+                        <span className="text-white">ALDA</span>
+                        <span className="text-accent">CODE</span>
                     </span>
                     <button
                         onClick={() => handleLinkClick("")}

@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NETIKA — Portafolio y emprendimiento web
 
-## Getting Started
+Página web de emprendimiento NETIKA conconstruido con Netx.js, Typescript y Tailwindcss. 
 
-First, run the development server:
+## Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Seccion HERO con imagen de fondo y degrade.
+- Navbar con enlaces a las diferentes secciones. Resposive para móvil o pantallas pequeñas con menú desplegable y botón hamburguesa.
+- Scrollreveal para animaciones al cargar las diferentes secciones.
+- Portafolio con 3 proyectos destacados y enlaces a dichos proyectos.
+- Sección de contacto con formulario con validación y redireccionamiento a Whatsapp.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js + Typescript
+- Tailwind CSS 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura del proyecto
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   └── page.tsx
+├── components/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── Navbar.tsx
+│   ├── Portfolio.tsx
+│   ├── ScrollReveal.tsx
+│   └── Services.tsx
+├── data/
+│   ├── contact.ts
+│   ├── nav.ts
+│   ├── portfolio.ts
+│   └── services.ts
+├── hooks/
+│   ├── useContactForm.ts
+│   ├── useNavbar.ts
+│   └── useScrollReveal.ts
+└── types/
+    └── index.ts
 
-## Learn More
+## Autor
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Aldayr — [NETIKA] 

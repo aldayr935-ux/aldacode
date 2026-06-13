@@ -15,7 +15,7 @@ export const portfolioItems: PortfolioItem[] = [
     tag: "Tienda Online",
     title: "Melodía Music-Store",
     desc: "Sitio de e-commerce cpn catálogo completo, filtros por categorías, sistema de carrito de compras y de pagos online.",
-    href: "#",
+    href: "https://melodia-music-store.vercel.app/",
     imgClass: "portfolio-img--2",
   },
   {

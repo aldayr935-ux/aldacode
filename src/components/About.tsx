@@ -24,7 +24,7 @@ export default function About() {
                         </h2>
 
                         <p className="text-muted leading-[1.75] mb-4">
-                            NETIKA fue creada por Omar Aldayr García, desarrollador
+                            ALDACODE fue creado por Omar Aldayr García, desarrollador
                             web y estudiante de Ingeniería en Sistemas Computacionales. Con la
                             misión de ayudar a emprendedores y PyMEs a tener presencia
                             profesional en internet, con la dedicación y calidad que cada
