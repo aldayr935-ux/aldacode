@@ -22,7 +22,7 @@
 
 /* Variables disponibles en CSS puro */
 :root {
-  --navbar-h: 72px;
+  --navbar-h: 60px;
   --transition: 0.28s ease;
   --shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
   --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.18);

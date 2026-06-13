@@ -15,8 +15,8 @@ export default function Navbar() {
                 className={[
                     "fixed top-0 left-0 w-full z-50 transition-all duration-300",
                     scrolled
-                        ? "bg-primary/95 backdrop-blur-sm shadow-lg border-b border-border py-4"
-                        : "bg-transparent py-7",
+                        ? "bg-primary/95 backdrop-blur-sm shadow-lg border-b border-border py-2"
+                        : "bg-transparent py-3",
                 ].join(" ")}
                 aria-label="Navegación principal"
             >
@@ -27,7 +27,7 @@ export default function Navbar() {
                         href="#inicio"
                         onClick={(e) => { e.preventDefault(); handleLinkClick("#inicio"); }}
                         className="flex items-center gap-3 group h-20"
-                        aria-label="NETIKA — Inicio"
+                        aria-label="ALDACODE — Inicio"
                     >
                         <Image
                             src="/img/aldacode_logo.svg"

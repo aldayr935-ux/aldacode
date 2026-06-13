@@ -1,6 +1,6 @@
-# NETIKA — Portafolio y emprendimiento web
+# ALDACODE — Portafolio y emprendimiento web
 
-Página web de emprendimiento NETIKA conconstruido con Netx.js, Typescript y Tailwindcss. 
+Página web de emprendimiento ALDACODE conconstruido con Netx.js, Typescript y Tailwindcss. 
 
 ## Características
 
@@ -45,4 +45,4 @@ src/
 
 ## Autor
 
-Aldayr — [NETIKA] 
+Aldayr — [ALDACODE] (https://aldacode.vercel.app/)
