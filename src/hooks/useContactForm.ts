@@ -51,7 +51,7 @@ export function useContactForm() {
       setStatus("sending");
 
       const texto =
-        `¡Hola! Me contacto desde el sitio web de NETIKA. 👋\n\n` +
+        `¡Hola! Me contacto desde el sitio web de ALDACODE. 👋\n\n` +
         `*Nombre:* ${form.nombre.trim()}\n` +
         `*Correo:* ${form.email.trim()}\n` +
         `*Servicio de interés:* ${form.servicio || "No especificado"}\n` +

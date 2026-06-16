@@ -45,4 +45,4 @@ src/
 
 ## Autor
 
-Aldayr — [ALDACODE] (https://aldacode.vercel.app/)
+Aldayr — [ALDACODE] (https://aldacode.com/)
