@@ -21,6 +21,21 @@ export const contactItems: ContactItem[] = [
   },
 ];
 
+export const socialLinks = [
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: "https://facebook.com/share/1ApjXeM44M/", 
+    icon: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z",
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: "https://instagram.com/aldacodemx?igsh=dGFIcnJseWR3N2Q0", // cambia por tu URL real
+    icon: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01M6.5 2h11A4.5 4.5 0 0122 6.5v11a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 17.5v-11A4.5 4.5 0 016.5 2z",
+  },
+];
+
 export const aboutFeatures: Feature[] = [
   { id: "f1", label: "Entregas puntuales garantizadas" },
   { id: "f2", label: "Diseño personalizado, sin plantillas" },

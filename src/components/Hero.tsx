@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative w-full h-screen min-h-[620px] flex items-center overflow-hidden"
+      className="relative w-full min-h-screen flex items-center overflow-hidden"
     >
       {/* Imagen de fondo */}
       <div
