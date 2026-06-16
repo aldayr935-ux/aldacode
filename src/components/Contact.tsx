@@ -36,9 +36,9 @@ export default function Contact() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
                     {/* Info izquierda */}
-                    <div className="contact__info flex flex-col gap-6 items-center lg:items-start">
+                    <div className="contact__info flex flex-col gap-6 items-center lg:items-start w-full">
                         {contactItems.map((item) => (
-                            <div key={item.id} className="flex items-center gap-4">
+                            <div key={item.id} className="flex items-center gap-4 w-full">
                                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
                                     <svg
                                         viewBox="0 0 24 24"
