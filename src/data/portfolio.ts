@@ -20,9 +20,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "trackon",
-    tag: "App Web",
+    tag: "App Fullstack",
     title: "TRACKON — Dashboard Logístico",
-    desc: "Dashboard de operaciones para empresa de carga y logística. Incluye seguimiento de flota, envíos activos, análisis de rutas con Chart.js y un asistente IA integrado con la API de Claude para consultas en tiempo real.",
+    desc: "Dashboard de logística fullstack. React + TypeScript en el frontend, Node.js + Express + PostgreSQL en el backend. Autenticación JWT, API REST con 15+ endpoints, deploy en Railway + Vercel.",
     href: "https://trackon-dashboard.vercel.app/",
     imgClass: "portfolio-img--3",
   },
