@@ -7,13 +7,13 @@ export const services: Service[] = [
     title: "Diseño Web",
     desc: "Interfaces únicas y memorables que reflejan la identidad de tu marca y capturan la atención al primer vistazo.",
     badge: "Popular",
+    featured: true,
   },
   {
     id: "desarrollo-medida",
     icon: "M16 18l6-6-6-6M8 6L2 12l6 6",
     title: "Desarrollo a Medida",
-    desc: "Aplicaciones web robustas y escalables, construidas con las tecnologías más modernas del mercado.",
-    featured: true,
+    desc: "Aplicaciones web y móviles robustas y escalables, construidas con las tecnologías más modernas del mercado.",
   },
   {
     id: "ecommerce",

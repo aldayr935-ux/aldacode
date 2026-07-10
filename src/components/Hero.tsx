@@ -62,9 +62,8 @@ export default function Hero() {
 
         <p className="text-[1.05rem] font-light leading-[1.75] text-light mb-10 max-w-[460px]">
           En ALDACODE creemos en el poder de la web para impulsar tus proyectos.
-          Creamos tu sitio web personalizado para tu negocio, blog personal,
-          portafolio, tienda online o lo que imagines. Lleva tus ideas al
-          siguiente nivel.
+          Creamos soluciones digitales a tu medida, desde landing pages, hasta apps
+          web o móviles adapatadas a tu necesidad.
         </p>
 
         <div className="flex gap-4 flex-wrap">
