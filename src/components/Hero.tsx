@@ -24,7 +24,7 @@ export default function Hero() {
           "absolute inset-0 bg-[url('/img/background.webp')]",
           "bg-cover bg-[center_right] bg-no-repeat",
           "scale-[1.04] transition-transform duration-[8000ms] ease-linear",
-          "[&.loaded]:scale-100",
+          "[&.loaded]:scale-100 hero-bg",
         ].join(" ")}
         aria-hidden="true"
       />
