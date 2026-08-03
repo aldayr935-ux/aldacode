@@ -11,11 +11,11 @@ export const portfolioItems: PortfolioItem[] = [
     wide: true,
   },
   {
-    id: "melodia",
-    tag: "Tienda Online",
-    title: "Melodía Music-Store",
-    desc: "Sitio de e-commerce con catálogo completo, filtros por categorías, sistema de carrito de compras y de pagos online.",
-    href: "https://melodia-music-store.vercel.app/",
+    id: "burg n' ribs",
+    tag: "Landing + menú digital",
+    title: "Burg N' Ribs",
+    desc: "Sitio web para restaurante, integración de menú digital y QR, Formulario de reservación y enlace a Google maps.",
+    href: "https://burgnribs.netlify.app",
     imgClass: "portfolio-img--2",
   },
   {
