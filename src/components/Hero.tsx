@@ -1,94 +1,109 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState } from "react";
+import GradientWaves from "./ui/GradientWaves";
+import BlurText from "./ui/BlurText";
 
 export default function Hero() {
-  const bgRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      bgRef.current?.classList.add("loaded");
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
+  const [isTitleFinished, setIsTitleFinished] = useState(false);
 
   return (
     <section
       id="inicio"
-      className="relative w-full min-h-screen flex items-center overflow-hidden"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Imagen de fondo */}
-      <div
-        ref={bgRef}
-        className={[
-          "absolute inset-0 bg-[url('/img/background.webp')]",
-          "bg-cover bg-[center_right] bg-no-repeat",
-          "scale-[1.04] transition-transform duration-[8000ms] ease-linear",
-          "[&.loaded]:scale-100 hero-bg",
-        ].join(" ")}
-        aria-hidden="true"
-      />
+      {/* Fondo animado */}
+      <div className="inset-0 fixed">
+        <GradientWaves
+          horizonColor="#ffc527"
+          waveColor="#ecd825"
+          crestColor="#f0c91e"
+          speed={0.3}
+          amplitude={2.5}
+          waveScale={0.6}
+          waveRatio={0.9}
+          swell={35}
+          turbulence={20}
+          tilt={1.11}
+          zoom={1}
+          height={5.5}
+          fogDepth={15}
+          detail="medium"
+          brightness={1}
+          opacity={1}
+          mouseInteraction
+          parallaxStrength={0.5}
+          grain
+          grainIntensity={0.05}
+        />
+      </div>
 
-      {/* Overlay degradado izquierda → derecha */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to right, #0D1B2A 0%, #0D1B2Aee 32%, #0D1B2Acc 52%, #0D1B2A55 72%, transparent 100%)",
-        }}
-        aria-hidden="true"
-      />
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 max-w-4xl mx-auto pt-[calc(var(--navbar-h)+2rem)]">
 
-      {/* Contenido */}
-      <div
-        className="relative z-10 max-w-[580px] px-16 pt-[calc(var(--navbar-h)+2rem)]"
-        style={{ animation: "fadeInUp 0.9s ease both" }}
-      >
-        <span className="inline-block text-[0.72rem] font-semibold tracking-[0.14em] uppercase text-accent border border-accent px-3.5 py-1 rounded-sm mb-6">
-          Agencia de Desarrollo Web
-        </span>
-
+        {/* Título en dos líneas con alineación opuesta */}
         <h1
-          className="font-bold leading-[1.15] text-white mb-5"
+          className="font-bold leading-[1.15] text-white mb-5 w-full max-w-2xl"
           style={{
             fontFamily: "var(--font-playfair)",
             fontSize: "clamp(2.6rem, 5vw, 4rem)",
           }}
         >
-          Tus proyectos,<br />
-          en el mundo{" "}
-          <em className="italic text-accent">digital</em>
+          <div className="text-left">
+            <BlurText
+              text="Tus proyectos en el"
+              delay={150}
+              animateBy="words"
+              direction="top"
+            />
+          </div>
+          <div className="text-right">
+            <BlurText
+              text="mundo digital"
+              delay={250}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => setIsTitleFinished(true)}
+            />
+          </div>
         </h1>
 
-        <p className="text-[1.05rem] font-light leading-[1.75] text-light mb-10 max-w-[460px]">
-          En ALDACODE creemos en el poder de la web para impulsar tus proyectos.
-          Creamos soluciones digitales a tu medida, desde landing pages, hasta apps
-          web o móviles adapatadas a tu necesidad.
-        </p>
+        {/* Descripción y botones — siempre en el DOM, sin salto */}
+        <div
+          className="flex flex-col items-center w-full max-w-2xl transition-opacity duration-700"
+          style={{ opacity: isTitleFinished ? 1 : 0 }}
+        >
+          <p className="text-[1.05rem] font-light leading-[1.75] text-light mt-10 mb-16 w-full">
+            En ALDACODE creemos en el poder de la web para impulsar tus proyectos.
+            Creamos tu sitio web personalizado para tu negocio, blog personal,
+            portafolio, tienda online o lo que imagines. Lleva tus ideas al
+            siguiente nivel.
+          </p>
 
-        <div className="flex gap-4 flex-wrap">
-          <a
-            href="#portafolio"
-            onClick={(e) => {
-              e.preventDefault();
-              const el = document.getElementById("portafolio");
-              if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" });
-            }}
-            className="inline-block text-[0.9rem] font-semibold tracking-wide px-8 py-3.5 rounded-lg bg-accent text-primary transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(201,168,76,0.35)]"
-          >
-            Ver nuestro trabajo
-          </a>
-          <a
-            href="#contacto"
-            onClick={(e) => {
-              e.preventDefault();
-              const el = document.getElementById("contacto");
-              if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" });
-            }}
-            className="inline-block text-[0.9rem] font-semibold tracking-wide px-8 py-3.5 rounded-lg bg-transparent text-light border border-light/35 transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5"
-          >
-            Contáctanos
-          </a>
+          {/* Botones del mismo ancho que el texto */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
+            <a
+              href="#portafolio"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("portafolio");
+                if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+              }}
+              className="flex-1 text-center text-[0.9rem] font-semibold tracking-wide px-8 py-3.5 rounded-lg bg-accent text-primary transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(201,168,76,0.35)]"
+            >
+              Ver nuestro trabajo
+            </a>
+            <a
+              href="#contacto"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("contacto");
+                if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+              }}
+              className="flex-1 text-center text-[0.9rem] font-semibold tracking-wide px-8 py-3.5 rounded-lg bg-transparent text-light border border-light/35 transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5"
+            >
+              Contáctanos
+            </a>
+          </div>
         </div>
       </div>
 
@@ -98,7 +113,7 @@ export default function Hero() {
         onClick={(e) => {
           e.preventDefault();
           const el = document.getElementById("servicios");
-          if (el) window.scrollTo({ top: el.offsetTop - 72, behavior: "smooth" });
+          if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
         }}
         aria-label="Ir a servicios"
         className="absolute bottom-10 right-12 z-10 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity"

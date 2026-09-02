@@ -9,7 +9,7 @@ export default function Contact() {
     const [selectOpen, setSelectOpen] = useState(false);
 
     return (
-        <section id="contacto" className="py-24 bg-secondary/20">
+        <section id="contacto" className="py-24 bg-secondary/60 relative">
             <div className="max-w-[1180px] mx-auto px-8">
 
                 {/* Header */}

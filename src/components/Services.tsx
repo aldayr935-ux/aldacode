@@ -2,7 +2,7 @@ import { services } from "@/data/services";
 
 export default function Services() {
     return (
-        <section id="servicios" className="py-24 bg-primary">
+        <section id="servicios" className="py-24 bg-primary/60 relative">
             <div className="max-w-[1180px] mx-auto px-8">
 
                 {/* Header */}

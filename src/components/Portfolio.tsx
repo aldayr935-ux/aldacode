@@ -48,7 +48,7 @@ export default function Portfolio() {
               />
 
               {/* Info */}
-              <div className="p-6 bg-secondary/40 backdrop-blur-sm">
+              <div className="p-6 bg-secondary/80 backdrop-blur-sm">
                 <span className="inline-block text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-accent border border-accent/50 px-2.5 py-0.5 rounded-sm mb-3">
                   {item.tag}
                 </span>

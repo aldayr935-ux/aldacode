@@ -5,7 +5,7 @@ import { socialLinks } from "@/data/contact";
 
 export default function Footer() {
     return (
-        <footer className="bg-primary border-t border-border">
+        <footer className="bg-primary border-t border-border relative">
             <div className="max-w-[1180px] mx-auto px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
 

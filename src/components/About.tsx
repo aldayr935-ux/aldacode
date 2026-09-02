@@ -2,7 +2,7 @@ import { aboutFeatures } from "@/data/contact";
 
 export default function About() {
     return (
-        <section id="nosotros" className="py-24 bg-primary">
+        <section id="nosotros" className="py-24 bg-primary/60 relative">
             <div className="max-w-[1180px] mx-auto px-8">
                 <div className="max-w-[720px] mx-auto">
 
