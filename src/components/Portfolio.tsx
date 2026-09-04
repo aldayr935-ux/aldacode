@@ -1,6 +1,17 @@
+'use client';
+
 import { portfolioItems } from "@/data/portfolio";
+import AccordionGallery from "@/components/ui/AccordionGallery";
+import type { AccordionGalleryItem } from "@/components/ui/AccordionGallery";
 
 export default function Portfolio() {
+  const galleryItems: AccordionGalleryItem[] = portfolioItems.map((item) => ({
+    image: item.image,
+    label: item.label,
+    link: item.href !== "#" ? item.href : undefined,
+    alt: item.title,
+  }));
+
   return (
     <section id="portafolio" className="py-24 bg-secondary/20">
       <div className="max-w-[1180px] mx-auto px-8">
@@ -25,55 +36,27 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {portfolioItems.map((item) => (
-            <div
-              key={item.id}
-              className={[
-                "portfolio-card group relative rounded-2xl overflow-hidden border border-border",
-                "transition-all duration-300 hover:-translate-y-1 hover:border-accent/40",
-                "hover:shadow-[0_8px_40px_rgba(0,0,0,0.35)]",
-                item.wide ? "md:col-span-2" : "",
-              ].join(" ")}
-            >
-              {/* Imagen de fondo */}
-              <div
-                className={[
-                  "w-full bg-secondary/60 bg-cover bg-center",
-                  "transition-transform duration-500 group-hover:scale-[1.03]",
-                  item.wide ? "h-64 md:h-80" : "h-52",
-                  item.imgClass,
-                ].join(" ")}
-              />
-
-              {/* Info */}
-              <div className="p-6 bg-secondary/80 backdrop-blur-sm">
-                <span className="inline-block text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-accent border border-accent/50 px-2.5 py-0.5 rounded-sm mb-3">
-                  {item.tag}
-                </span>
-                <h3
-                  className="text-lg font-semibold text-white mb-2"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted leading-[1.75] mb-4">
-                  {item.desc}
-                </p>
-                <a
-                  href={item.href}
-                  target={item.href !== "#" ? "_blank" : undefined}
-                  rel={item.href !== "#" ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:gap-3 transition-all duration-200"
-                >
-                  Ver proyecto
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Galería accordion */}
+        <AccordionGallery
+          items={galleryItems}
+          defaultIndex={0}
+          expandRatio={0.52}
+          trigger="hover"
+          accentColor="#C9A84C"
+          overlayColor="#0D1B2A"
+          textColor="#F0F4F8"
+          grayscale
+          showLabels
+          duration={0.6}
+          ease="power3.out"
+          parallax={0.5}
+          tilt={8}
+          stagger={0.06}
+          height={500}
+          gap={10}
+          radius={16}
+          orientation="horizontal"
+        />
 
       </div>
     </section>

@@ -1,14 +1,15 @@
 import type { PortfolioItem } from "@/types";
 
 export const portfolioItems: PortfolioItem[] = [
-  {
+   {
     id: "samay",
     tag: "Landing Page",
-    title: "Consultorio de nutrición SAMAY",
-    desc: "Página principal para el consultorio SAMAY, con diseño minimalista, integración de formulario para contacto por WhatsApp, sección de ubicaciones con redirigimiento a Google Maps y SEO optimizado para llegar a nuevos pacientes.",
+    title: "Consultorio SAMAY",
+    desc: "Página principal para el consultorio SAMAY.",
     href: "https://samaynutricion.com",
     imgClass: "portfolio-img--1",
-    wide: true,
+    image: "/img/samay.webp",
+    label: "Consultorio SAMAY",
   },
   {
     id: "burg n' ribs",
@@ -17,6 +18,8 @@ export const portfolioItems: PortfolioItem[] = [
     desc: "Sitio web para restaurante, integración de menú digital y QR, Formulario de reservación y enlace a Google maps.",
     href: "https://burgnribs.netlify.app",
     imgClass: "portfolio-img--2",
+    image: "/img/burgnribs.webp",
+    label: "Burg N' Ribs",
   },
   {
     id: "trackon",
@@ -25,5 +28,27 @@ export const portfolioItems: PortfolioItem[] = [
     desc: "Dashboard de logística fullstack. React + TypeScript en el frontend, Node.js + Express + PostgreSQL en el backend. Autenticación JWT, API REST con 15+ endpoints, deploy en Railway + Vercel.",
     href: "https://trackon-dashboard.vercel.app/",
     imgClass: "portfolio-img--3",
+    image: "/img/trackon.webp",
+    label: "Trackon",
+  },
+  {
+    id: "hospital",
+    tag: "Sitio Multi Página",
+    title: "Hospital Piedad",
+    desc: "Sitio web con página propia para cada sección. Construido con React y CSS modular.",
+    href: "https://hospital-piedad.netlify.app/",
+    imgClass: "portfolio-img--4",
+    image: "/img/hospital-piedad.webp",
+    label: "Hospital Piedad",
+  },
+  {
+    id: "financiapp",
+    tag: "PWA Finanzas Personales",
+    title: "FinanciApp",
+    desc: "App web Progresiva para control de finanzas personales. Construida con React y VitePWA.",
+    href: "https://financiapp-nine.vercel.app/",
+    imgClass: "portfolio-img--5",
+    image: "/img/financiapp.png",
+    label: "FinanciApp",
   },
 ];

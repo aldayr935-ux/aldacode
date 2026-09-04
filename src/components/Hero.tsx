@@ -73,10 +73,7 @@ export default function Hero() {
           style={{ opacity: isTitleFinished ? 1 : 0 }}
         >
           <p className="text-[1.05rem] font-light leading-[1.75] text-light mt-10 mb-16 w-full">
-            En ALDACODE creemos en el poder de la web para impulsar tus proyectos.
-            Creamos tu sitio web personalizado para tu negocio, blog personal,
-            portafolio, tienda online o lo que imagines. Lleva tus ideas al
-            siguiente nivel.
+            En ALDACODE creemos en el poder de la tecnología para impulsar tu negocio, creando soluciones digitales adaptadas a tu proyecto, desde el sitio web de tu marca, hasta aplicaciones web completas, de escritorio o móviles.
           </p>
 
           {/* Botones del mismo ancho que el texto */}

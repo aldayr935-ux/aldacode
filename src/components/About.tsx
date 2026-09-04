@@ -25,7 +25,7 @@ export default function About() {
 
                         <p className="text-muted leading-[1.75] mb-4">
                             ALDACODE fue creado por Omar Aldayr García, desarrollador
-                            web y estudiante de Ingeniería en Sistemas Computacionales. Con la
+                            web fullstack y estudiante de Ingeniería en Sistemas Computacionales. Con la
                             misión de ayudar a emprendedores y PyMEs a tener presencia
                             profesional en internet, con la dedicación y calidad que cada
                             proyecto merece.

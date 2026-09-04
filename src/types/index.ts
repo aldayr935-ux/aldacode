@@ -17,6 +17,8 @@ export interface PortfolioItem {
   desc: string;
   href: string;
   imgClass: string;
+  image: string;
+  label: string;
   wide?: boolean;
 }
 
