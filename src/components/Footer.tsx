@@ -12,11 +12,11 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="flex flex-col items-center md:items-start gap-3">
                         <Image
-                            src="/img/aldacode_logo.svg"
+                            src="/img/nav-logo.svg"
                             alt="ALDACODE — Web Development"
                             width={280}
                             height={50}
-                            className="h-10 w-auto object-contain"
+                            className="h-20 w-auto object-contain"
                         />
                         <p className="text-sm text-muted text-center md:text-left leading-relaxed">
                             Tus proyectos, en el mundo digital.

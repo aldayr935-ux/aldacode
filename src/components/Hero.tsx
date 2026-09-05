@@ -20,12 +20,12 @@ export default function Hero() {
           crestColor="#f0c91e"
           speed={0.3}
           amplitude={2.5}
-          waveScale={0.6}
-          waveRatio={0.9}
+          waveScale={0.8}
+          waveRatio={1.0}
           swell={35}
-          turbulence={20}
-          tilt={1.11}
-          zoom={1}
+          turbulence={15}
+          tilt={1}
+          zoom={1.5}
           height={5.5}
           fogDepth={15}
           detail="medium"

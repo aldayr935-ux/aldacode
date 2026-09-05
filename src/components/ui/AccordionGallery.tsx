@@ -138,18 +138,9 @@ const AccordionGallery = ({
       tlRef.current = tl;
     },
     [
-      active,
-      count,
-      expandRatio,
-      duration,
-      ease,
-      vertical,
-      tilt,
-      parallax,
-      grayscale,
-      showLabels,
-      stagger,
-      prefersReduced
+      active, count, expandRatio, duration, ease,
+      vertical, tilt, parallax, grayscale, showLabels,
+      stagger, prefersReduced
     ]
   );
 
@@ -178,17 +169,13 @@ const AccordionGallery = ({
     firstRunRef.current = false;
   }, [applyLayout]);
 
-  useEffect(
-    () => () => {
-      tlRef.current?.kill();
-    },
-    []
-  );
+  useEffect(() => () => { tlRef.current?.kill(); }, []);
 
   const handleEnter = (i: number) => {
     if (trigger === 'hover') setActive(i);
   };
 
+  // ── Click: si no está activo lo activa; si ya está activo deja seguir el link
   const handleClick = (i: number, e: MouseEvent) => {
     if (i !== active) {
       e.preventDefault();
@@ -216,36 +203,30 @@ const AccordionGallery = ({
     >
       {items.map((item, i) => {
         const isActive = i === active;
-        const Tag = (item.link ? 'a' : 'div') as 'a';
+        // Siempre renderizamos como div para controlar el link manualmente
         return (
-          <Tag
+          <div
             key={i}
-            ref={(el: HTMLElement | null) => {
-              panelRefs.current[i] = el;
-            }}
+            ref={(el: HTMLDivElement | null) => { panelRefs.current[i] = el; }}
             className="group relative block min-w-0 min-h-0 flex-[1_1_0] cursor-pointer overflow-hidden bg-[#0a0713] no-underline outline-none [transform-style:preserve-3d] [transform-origin:center] [box-shadow:0_10px_30px_-18px_rgba(0,0,0,0.8)] focus-visible:[box-shadow:0_0_0_2px_var(--ag-accent),0_10px_30px_-18px_rgba(0,0,0,0.8)] max-[520px]:min-h-[84px] max-[520px]:!transform-none"
-            style={
-              {
-                borderRadius: `${radius}px`,
-                '--ag-accent': accentColor,
-                willChange: 'flex-grow, transform'
-              } as CSSProperties
-            }
-            href={item.link || undefined}
-            onClick={e => handleClick(i, e)}
+            style={{
+              borderRadius: `${radius}px`,
+              '--ag-accent': accentColor,
+              willChange: 'flex-grow, transform'
+            } as CSSProperties}
+            onClick={e => handleClick(i, e as unknown as MouseEvent)}
             onMouseEnter={() => handleEnter(i)}
             onFocus={() => setActive(i)}
-            onKeyDown={e => handleKeyDown(i, e)}
+            onKeyDown={e => handleKeyDown(i, e as unknown as KeyboardEvent)}
             role="listitem"
             tabIndex={0}
             aria-current={isActive ? 'true' : undefined}
             aria-label={item.label}
           >
+            {/* Imagen */}
             <span className="absolute inset-0 overflow-hidden [border-radius:inherit]">
               <span
-                ref={(el: HTMLElement | null) => {
-                  mediaRefs.current[i] = el;
-                }}
+                ref={(el: HTMLElement | null) => { mediaRefs.current[i] = el; }}
                 className="absolute top-1/2 left-1/2 [filter:grayscale(var(--ag-gray,1))]"
                 style={{
                   width: vertical ? '100%' : 'var(--ag-media-size, 320px)',
@@ -266,33 +247,53 @@ const AccordionGallery = ({
                 aria-hidden="true"
               />
             </span>
+
+            {/* Label + botón */}
             {showLabels && (
               <span
-                className="pointer-events-none absolute bottom-5 left-5 right-5 z-[2] flex items-center gap-3"
+                className="absolute bottom-5 left-5 right-5 z-[2] flex flex-col gap-2"
                 aria-hidden="true"
               >
-                <span
-                  ref={(el: HTMLElement | null) => {
-                    barRefs.current[i] = el;
-                  }}
-                  className="h-[26px] w-[3px] flex-none rounded-[3px] opacity-0"
-                  style={{
-                    background: accentColor,
-                    boxShadow: `0 0 12px color-mix(in srgb, ${accentColor} 60%, transparent)`
-                  }}
-                />
-                <span
-                  ref={(el: HTMLElement | null) => {
-                    textRefs.current[i] = el;
-                  }}
-                  className="overflow-hidden text-ellipsis whitespace-nowrap text-[clamp(1rem,1.4vw,1.4rem)] font-semibold tracking-[0.01em] opacity-0 [text-shadow:0_2px_14px_rgba(0,0,0,0.55)]"
-                  style={{ color: textColor }}
-                >
-                  {item.label}
+                {/* Barra + nombre */}
+                <span className="flex items-center gap-3 pointer-events-none">
+                  <span
+                    ref={(el: HTMLElement | null) => { barRefs.current[i] = el; }}
+                    className="h-[26px] w-[3px] flex-none rounded-[3px] opacity-0"
+                    style={{
+                      background: accentColor,
+                      boxShadow: `0 0 12px color-mix(in srgb, ${accentColor} 60%, transparent)`
+                    }}
+                  />
+                  <span
+                    ref={(el: HTMLElement | null) => { textRefs.current[i] = el; }}
+                    className="overflow-hidden text-ellipsis whitespace-nowrap text-[clamp(1rem,1.4vw,1.4rem)] font-semibold tracking-[0.01em] opacity-0 [text-shadow:0_2px_14px_rgba(0,0,0,0.55)]"
+                    style={{ color: textColor }}
+                  >
+                    {item.label}
+                  </span>
                 </span>
+
+                {/* Botón ver proyecto — visible solo cuando está activo y tiene link */}
+                {item.link && isActive && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pointer-events-auto self-start ml-[18px] text-xs font-semibold tracking-wide px-4 py-1.5 rounded-md border transition-all duration-200 hover:opacity-80"
+                    style={{
+                      color: accentColor,
+                      borderColor: accentColor,
+                      background: 'rgba(0,0,0,0.4)',
+                      backdropFilter: 'blur(4px)',
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Ver proyecto →
+                  </a>
+                )}
               </span>
             )}
-          </Tag>
+          </div>
         );
       })}
     </div>
