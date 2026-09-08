@@ -2,7 +2,7 @@
 export interface Service {
   id: string;
   icon: string;
-  icon2?: string;   // ← path secundario opcional
+  icon2?: string;   
   title: string;
   desc: string;
   featured?: boolean;
