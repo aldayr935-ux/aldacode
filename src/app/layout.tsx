@@ -61,7 +61,7 @@ export const metadata: Metadata = {
       "Creamos sitios web, tiendas en línea y aplicaciones web a medida para empresas y emprendedores en México.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://aldacode.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "ALDACODE — Desarrollo Web Profesional",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "ALDACODE — Desarrollo Web Profesional en México",
     description:
       "Creamos sitios web, tiendas en línea y aplicaciones web a medida para empresas y emprendedores en México.",
-    images: ["/og-image.jpg"],
+    images: ["https://aldacode.com/og-image.jpg"],
   },
   alternates: {
     canonical: BASE_URL,
